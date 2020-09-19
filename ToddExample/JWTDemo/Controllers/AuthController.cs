@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using JWTDemo.Infrastructure;
+using ToddDemo.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace JWTDemo.Controllers
+namespace ToddDemo.Controllers
 {
     [Route("[controller]")]
     [Authorize]

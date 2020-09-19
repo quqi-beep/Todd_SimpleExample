@@ -8536,9 +8536,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\JWTDemo\\JWTDemo.csproj",
-      "projectName": "JWTDemo",
-      "projectPath": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\JWTDemo\\JWTDemo.csproj",
+      "projectUniqueName": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\JWTDemo\\ToddDemo.csproj",
+      "projectName": "ToddDemo",
+      "projectPath": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\JWTDemo\\ToddDemo.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
       "outputPath": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\JWTDemo\\obj\\",
       "projectStyle": "PackageReference",

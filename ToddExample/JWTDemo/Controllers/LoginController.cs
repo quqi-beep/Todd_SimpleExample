@@ -5,14 +5,14 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using JWTDemo.Infrastructure;
-using JWTDemo.Model;
+using ToddDemo.Infrastructure;
+using ToddDemo.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace JWTDemo.Controllers
+namespace ToddDemo.Controllers
 {
     [Route("[controller]")]
     [ApiController]

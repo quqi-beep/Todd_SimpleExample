@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace JWTDemo.Extensions
+namespace ToddDemo.Extensions
 {
     public static class SwaggerExtension
     {

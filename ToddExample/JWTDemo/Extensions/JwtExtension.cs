@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JWTDemo.Extensions
+namespace ToddDemo.Extensions
 {
     public static class JwtExtension
     {
