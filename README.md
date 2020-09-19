@@ -1,4 +1,4 @@
 # Todd_SimpleExample
-Õâ¸ödome ÄÚÈİ°üÀ¨£º
-		1.»ù±¾µÄjwtÓÃ·¨
-		2.Swagger¼¯³Éµ½.Net Core
+è¿™ä¸ªdome å†…å®¹åŒ…æ‹¬ï¼š
+		1.åŸºæœ¬çš„jwtç”¨æ³• 
+		2.Swaggeré›†æˆåˆ°.Net Core
