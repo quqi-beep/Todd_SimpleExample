@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JWTDemo.Extensions;
 using JWTDemo.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -29,31 +30,14 @@ namespace JWTDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<JwtSetting>(Configuration.GetSection("JwtSetting"));
+            services.Configure<JwtSetting>(Configuration.GetSection("JwtSetting"));            
 
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options =>
-            {
-                var audience = Configuration.GetSection("JwtSetting:Audience").Value;
-                var issuer = Configuration.GetSection("JwtSetting:Issuer").Value;
-                var key = Configuration.GetSection("JwtSetting:SecurityKey").Value;
-                var issuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
-
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateLifetime = true,  //Ê§Ð§Ê±¼ä
-                    ValidAudience = audience,
-                    ValidIssuer = issuer,
-                    IssuerSigningKey= issuerSigningKey
-                };
-            });
-            //services.AddHttpContextAccessor();
+            services.AddToddJwt(Configuration);
+            
             //services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.AddControllers();
+
+            services.AddToddSwagger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +47,13 @@ namespace JWTDemo
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(x=> {
+                x.SwaggerEndpoint("/swagger/v1/swagger.json","Test Version V1");
+                x.SwaggerEndpoint("/swagger/v2/swagger.json", "Test Version V2");
+            });
 
             app.UseRouting();
             app.UseAuthentication();

@@ -8,11 +8,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JWTDemo.Controllers
 {
+    /// <summary>
+    /// 测试控制器
+    /// </summary>
     [Route("[controller]")]
     [ApiController]
     public class HomeController : AuthController
     {
-
+        /// <summary>
+        /// 测试 Api 1
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("index")]
         public IActionResult Index()
         {
@@ -20,6 +26,11 @@ namespace JWTDemo.Controllers
             return Ok(str);
         }
 
+        /// <summary>
+        /// 测试 Api 2
+        /// </summary>
+        /// <returns></returns>
+        [ApiExplorerSettings(GroupName ="v2")]
         [HttpGet("index2")]
         public IActionResult Index2()
         {

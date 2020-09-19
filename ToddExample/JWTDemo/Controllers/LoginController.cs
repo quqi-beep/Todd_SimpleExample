@@ -43,7 +43,7 @@ namespace JWTDemo.Controllers
             return Ok(new { Message = "Get Token Fail" });
         }
 
-        public (string, string) GetToken(User user)
+        private (string, string) GetToken(User user)
         {
             var claims = new Claim[] {
                 new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
