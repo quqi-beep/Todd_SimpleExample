@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using ToddDemo.Application.Requests;
 using ToddDemo.Application.Services;
@@ -59,10 +60,26 @@ namespace ToddDemo.Controllers
             return Ok(user);
         }
 
+        /// <summary>
+        /// 添加用户
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost("user/add"),AllowAnonymous]
         public async Task AddUserAsync([FromBody]UserRequest request)
         {
             await _userService.AddUserAsync(request);
+        }
+
+        /// <summary>
+        /// 更新用户部分信息
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("user/patch"),AllowAnonymous]
+        public void PatchUserAsync([FromBody]JsonPatchDocument<UserRequest> request)
+        {
+            _userService.PatchUserAsync(request);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace ToddDemo
             services.AddToddJwt(Configuration);
 
             //services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
 
             services.AddToddSwagger();
 

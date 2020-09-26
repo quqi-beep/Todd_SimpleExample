@@ -27,6 +27,20 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:ToddDemo.Controllers.HomeController.AddUserAsync(ToddDemo.Application.Requests.UserRequest)">
+            <summary>
+            添加用户
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ToddDemo.Controllers.HomeController.PatchUserAsync(Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{ToddDemo.Application.Requests.UserRequest})">
+            <summary>
+            更新用户部分信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="M:ToddDemo.Extensions.JwtExtension.AddToddJwt(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             JWT 扩展

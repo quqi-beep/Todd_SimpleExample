@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,6 +50,28 @@ namespace ToddDemo.Application.Services
             };
             await _context.AddAsync(user);
             await _context.SaveChangesAsync();
+        }
+
+        public void PatchUserAsync(JsonPatchDocument<UserRequest> request)
+        {
+            var user = _context.Set<User>().FirstOrDefault();
+            var userDbReuqust = new UserRequest
+            {
+                UserId = user.UserId,
+                UserName = user.UserName,
+                Password = user.Password,
+                Age = user.Age
+            };
+            request.ApplyTo(userDbReuqust);
+
+            user.UserId = userDbReuqust.UserId;
+            user.UserName = userDbReuqust.UserName;
+            user.Password = userDbReuqust.Password;
+            user.Age = userDbReuqust.Age;
+          
+
+            _context.Set<User>().Update(user);
+            _context.SaveChanges();
         }
     }
 }
