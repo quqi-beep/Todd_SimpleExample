@@ -2,3 +2,4 @@
 这个dome 内容包括：
 		1.基本的jwt用法 
 		2.Swagger集成到.Net Core
+		3.集成EF CORE 连接Mysql
