@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.JsonPatch;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,13 @@ namespace ToddDemo.Application.Services
     public class UserService
     {
         private readonly SpmContext _context;
+        private readonly IMapper _mapper;
 
-        public UserService(SpmContext context)
+        public UserService(SpmContext context,
+            IMapper mapper)
         {
             this._context = context;
+            _mapper = mapper;
         }
 
         /// <summary>
@@ -38,7 +42,25 @@ namespace ToddDemo.Application.Services
             return res;
         }
 
+        /// <summary>
+        /// 获取用户集合
+        /// </summary>
+        /// <returns></returns>
+        public UsersResponse GetUsersAsync()
+        {
+            var text = _context.Set<User>().AsQueryable().ToList();
+            var users= _mapper.Map<List<UserDto>>(text);
 
+            var age = _mapper.Map<List<UserAgeDto>>(users);
+
+            return new UsersResponse {  Users= users };
+        }
+
+        /// <summary>
+        /// 添加用户
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task AddUserAsync(UserRequest request)
         {
             var user = new User
@@ -52,6 +74,10 @@ namespace ToddDemo.Application.Services
             await _context.SaveChangesAsync();
         }
 
+        /// <summary>
+        /// 补丁更新
+        /// </summary>
+        /// <param name="request"></param>
         public void PatchUserAsync(JsonPatchDocument<UserRequest> request)
         {
             var user = _context.Set<User>().FirstOrDefault();
@@ -73,5 +99,6 @@ namespace ToddDemo.Application.Services
             _context.Set<User>().Update(user);
             _context.SaveChanges();
         }
+
     }
 }

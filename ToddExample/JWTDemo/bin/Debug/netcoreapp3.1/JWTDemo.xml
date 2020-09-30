@@ -27,6 +27,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:ToddDemo.Controllers.HomeController.GetUsersAsync">
+            <summary>
+            获取用户集合
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:ToddDemo.Controllers.HomeController.AddUserAsync(ToddDemo.Application.Requests.UserRequest)">
             <summary>
             添加用户

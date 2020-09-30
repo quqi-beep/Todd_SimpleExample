@@ -18,6 +18,8 @@ using Microsoft.IdentityModel.Tokens;
 using ToddDemo.Application.Context;
 using Microsoft.EntityFrameworkCore;
 using ToddDemo.Application.Services;
+using AutoMapper;
+using ToddDemo.Application.Infrastructure.AutoMapper;
 
 namespace ToddDemo
 {
@@ -35,17 +37,29 @@ namespace ToddDemo
         {
             services.Configure<JwtSetting>(Configuration.GetSection("JwtSetting"));
 
+            //注入JWT
             services.AddToddJwt(Configuration);
 
             //services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+
+            //Json Patch需要添加 NewtonsoftJson
             services.AddControllers().AddNewtonsoftJson();
 
+            //注入AutoMapper
+            services.AddAutoMapper(cfg =>
+            {
+                cfg.AddProfile<AutoMapperProfiles>();
+                cfg.AddProfile(new UserProfiles());
+            });
+
+            //注入Swagger
             services.AddToddSwagger();
 
             services.AddScoped<UserService>();
 
+            //注入MySql连接字符串
             var connectionStrings = Configuration.GetSection("ConnectionStrings").Value;
-            services.AddDbContext<SpmContext>(options => options.UseMySQL(connectionStrings, b => b.MigrationsAssembly("ToddDemo.Application")));
+            services.AddDbContext<SpmContext>(options => options.UseMySQL(connectionStrings, b => b.MigrationsAssembly("ToddDemo.Application")));            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,7 +77,7 @@ namespace ToddDemo
                 x.SwaggerEndpoint("/swagger/v1/swagger.json", "Test Version V1");
                 x.SwaggerEndpoint("/swagger/v2/swagger.json", "Test Version V2");
             });
-
+            
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
