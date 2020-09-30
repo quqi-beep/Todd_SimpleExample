@@ -51,6 +51,7 @@ namespace ToddDemo.Application.Services
             var text = _context.Set<User>().AsQueryable().ToList();
             var users= _mapper.Map<List<UserDto>>(text);
 
+            //多Profile映射
             var age = _mapper.Map<List<UserAgeDto>>(users);
 
             return new UsersResponse {  Users= users };
