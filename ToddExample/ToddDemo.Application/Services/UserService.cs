@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.JsonPatch;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ToddDemo.Application.Context;
+using ToddDemo.Application.EventHandlers.Event;
 using ToddDemo.Application.Requests;
 using ToddDemo.Application.Responses;
 
@@ -15,12 +17,15 @@ namespace ToddDemo.Application.Services
     {
         private readonly SpmContext _context;
         private readonly IMapper _mapper;
+        private readonly IMediator _mediator;
 
         public UserService(SpmContext context,
+            IMediator mediator,
             IMapper mapper)
         {
-            this._context = context;
+            _context = context;
             _mapper = mapper;
+            _mediator = mediator;
         }
 
         /// <summary>
@@ -49,12 +54,12 @@ namespace ToddDemo.Application.Services
         public UsersResponse GetUsersAsync()
         {
             var text = _context.Set<User>().AsQueryable().ToList();
-            var users= _mapper.Map<List<UserDto>>(text);
+            var users = _mapper.Map<List<UserDto>>(text);
 
             //多Profile映射
             var age = _mapper.Map<List<UserAgeDto>>(users);
 
-            return new UsersResponse {  Users= users };
+            return new UsersResponse { Users = users };
         }
 
         /// <summary>
@@ -95,11 +100,11 @@ namespace ToddDemo.Application.Services
             user.UserName = userDbReuqust.UserName;
             user.Password = userDbReuqust.Password;
             user.Age = userDbReuqust.Age;
-          
+
 
             _context.Set<User>().Update(user);
             _context.SaveChanges();
-        }
+        }        
 
     }
 }

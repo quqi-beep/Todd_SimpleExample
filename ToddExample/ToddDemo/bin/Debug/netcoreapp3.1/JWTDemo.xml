@@ -47,6 +47,29 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="T:ToddDemo.Controllers.MediatRTestController">
+            <summary>
+            测试MediatR的使用
+            </summary>
+        </member>
+        <member name="M:ToddDemo.Controllers.MediatRTestController.MediatRAddUserAsync">
+            <summary>
+            单播有返回值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ToddDemo.Controllers.MediatRTestController.MediatRVoidAddUserAsync">
+            <summary>
+            单播无返回值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ToddDemo.Controllers.MediatRTestController.MediatRNotifcationAddUserAsync">
+            <summary>
+            多播传递
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:ToddDemo.Extensions.JwtExtension.AddToddJwt(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             JWT 扩展

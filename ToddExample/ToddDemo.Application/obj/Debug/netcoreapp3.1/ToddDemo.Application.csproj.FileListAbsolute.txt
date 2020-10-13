@@ -8,3 +8,4 @@ D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\netcoreapp3.1\ToddDemo.Application.dll
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\netcoreapp3.1\ToddDemo.Application.pdb
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\netcoreapp3.1\ToddDemo.Application.genruntimeconfig.cache
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\netcoreapp3.1\ToddDemo.Application.csprojAssemblyReference.cache

@@ -138,6 +138,8 @@ D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\netco
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\netcoreapp3.1\MediatR.dll
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
@@ -258,8 +260,6 @@ D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\netco
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.csprojAssemblyReference.cache
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.AssemblyInfoInputs.cache
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.AssemblyInfo.cs
-D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.MvcApplicationPartsAssemblyInfo.cs
-D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.MvcApplicationPartsAssemblyInfo.cache
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.RazorTargetAssemblyInfo.cache
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.csproj.CopyComplete
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\staticwebassets\ToddDemo.StaticWebAssets.Manifest.cache
@@ -267,3 +267,5 @@ D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netco
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.dll
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.pdb
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.genruntimeconfig.cache
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.MvcApplicationPartsAssemblyInfo.cs
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo\obj\Debug\netcoreapp3.1\ToddDemo.MvcApplicationPartsAssemblyInfo.cache

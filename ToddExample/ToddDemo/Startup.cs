@@ -20,6 +20,9 @@ using Microsoft.EntityFrameworkCore;
 using ToddDemo.Application.Services;
 using AutoMapper;
 using ToddDemo.Application.Infrastructure.AutoMapper;
+using MediatR;
+using ToddDemo.Application.EventHandlers.Event;
+using ToddDemo.Application.EventHandlers;
 
 namespace ToddDemo
 {
@@ -34,7 +37,7 @@ namespace ToddDemo
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {            
             services.Configure<JwtSetting>(Configuration.GetSection("JwtSetting"));
 
             //注入JWT
@@ -50,16 +53,20 @@ namespace ToddDemo
             {
                 cfg.AddProfile<AutoMapperProfiles>();
                 cfg.AddProfile(new UserProfiles());
-            });
+            });            
 
             //注入Swagger
             services.AddToddSwagger();
 
             services.AddScoped<UserService>();
+            services.AddScoped<MediatRTestService>();
 
             //注入MySql连接字符串
             var connectionStrings = Configuration.GetSection("ConnectionStrings").Value;
-            services.AddDbContext<SpmContext>(options => options.UseMySQL(connectionStrings, b => b.MigrationsAssembly("ToddDemo.Application")));            
+            services.AddDbContext<SpmContext>(options => options.UseMySQL(connectionStrings, b => b.MigrationsAssembly("ToddDemo.Application")));
+
+            var s = typeof(GenericRequest);
+            services.AddMediatR(s);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,7 +84,7 @@ namespace ToddDemo
                 x.SwaggerEndpoint("/swagger/v1/swagger.json", "Test Version V1");
                 x.SwaggerEndpoint("/swagger/v2/swagger.json", "Test Version V2");
             });
-            
+
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
