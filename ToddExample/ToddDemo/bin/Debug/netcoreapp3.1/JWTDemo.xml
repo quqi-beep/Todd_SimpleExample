@@ -47,6 +47,12 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:ToddDemo.Controllers.HomeController.TestIocAsync">
+            <summary>
+            测试依赖注入
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:ToddDemo.Controllers.MediatRTestController">
             <summary>
             测试MediatR的使用
@@ -68,6 +74,13 @@
             <summary>
             多播传递
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ToddDemo.Extensions.AutofacModuleRegisterExtension.GetAssemblyByName(System.String)">
+            <summary>
+            根据程序集名称获取程序集
+            </summary>
+            <param name="AssemblyName">程序集名称</param>
             <returns></returns>
         </member>
         <member name="M:ToddDemo.Extensions.JwtExtension.AddToddJwt(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">

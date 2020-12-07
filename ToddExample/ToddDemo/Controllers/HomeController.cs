@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using ToddDemo.Application.Requests;
 using ToddDemo.Application.Services;
+using ToddDemo.Protocol.IService;
 
 namespace ToddDemo.Controllers
 {
@@ -19,10 +20,13 @@ namespace ToddDemo.Controllers
     public class HomeController : AuthController
     {
         private readonly UserService _userService;
+        private readonly ITestService _testService;
 
-        public HomeController(UserService userService)
+        public HomeController(UserService userService,
+            ITestService testService)
         {
             _userService = userService;
+            _testService = testService;
         }
 
         /// <summary>
@@ -67,6 +71,7 @@ namespace ToddDemo.Controllers
         [HttpGet("users"), AllowAnonymous]
         public IActionResult GetUsersAsync()
         {
+
             var users = _userService.GetUsersAsync();
             return Ok(users);
         }
@@ -91,6 +96,17 @@ namespace ToddDemo.Controllers
         public void PatchUserAsync([FromBody]JsonPatchDocument<UserRequest> request)
         {
             _userService.PatchUserAsync(request);
+        }
+
+        /// <summary>
+        /// 测试依赖注入
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("test/ioc"), AllowAnonymous]
+        public async Task<IActionResult> TestIocAsync()
+        {
+            var test =await _testService.EatAsync();
+            return Ok(test);
         }
 
     }

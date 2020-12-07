@@ -23,6 +23,8 @@ using ToddDemo.Application.Infrastructure.AutoMapper;
 using MediatR;
 using ToddDemo.Application.EventHandlers.Event;
 using ToddDemo.Application.EventHandlers;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 
 namespace ToddDemo
 {
@@ -35,9 +37,11 @@ namespace ToddDemo
 
         public IConfiguration Configuration { get; }
 
+        public ILifetimeScope AutofacContainer { get; private set; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {            
+        {
             services.Configure<JwtSetting>(Configuration.GetSection("JwtSetting"));
 
             //注入JWT
@@ -53,7 +57,7 @@ namespace ToddDemo
             {
                 cfg.AddProfile<AutoMapperProfiles>();
                 cfg.AddProfile(new UserProfiles());
-            });            
+            });
 
             //注入Swagger
             services.AddToddSwagger();
@@ -67,6 +71,7 @@ namespace ToddDemo
 
             var s = typeof(GenericRequest);
             services.AddMediatR(s);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,6 +81,9 @@ namespace ToddDemo
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //autofac 新增 可选
+            this.AutofacContainer = app.ApplicationServices.GetAutofacRoot();
 
             app.UseSwagger();
 
@@ -93,6 +101,14 @@ namespace ToddDemo
             {
                 endpoints.MapControllers();
             });
+        }
+
+
+        //autofac 新增
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            // 直接用Autofac注册我们自定义的 
+            builder.RegisterModule(new AutofacModuleRegisterExtension());
         }
     }
 }

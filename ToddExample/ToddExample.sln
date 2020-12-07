@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToddDemo", "ToddDemo\ToddDemo.csproj", "{8F6EE436-0969-487E-99C3-5A4A908DCC01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToddDemo.Application", "ToddDemo.Application\ToddDemo.Application.csproj", "{39A3CD4D-150A-468B-8A2B-BC7912F51110}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToddDemo.Application", "ToddDemo.Application\ToddDemo.Application.csproj", "{39A3CD4D-150A-468B-8A2B-BC7912F51110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToddDemo.Protocol", "ToddDemo.Protocol\ToddDemo.Protocol.csproj", "{111E25A7-5CA5-40BF-B2FE-9A9B2F002775}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{39A3CD4D-150A-468B-8A2B-BC7912F51110}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39A3CD4D-150A-468B-8A2B-BC7912F51110}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39A3CD4D-150A-468B-8A2B-BC7912F51110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{111E25A7-5CA5-40BF-B2FE-9A9B2F002775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111E25A7-5CA5-40BF-B2FE-9A9B2F002775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111E25A7-5CA5-40BF-B2FE-9A9B2F002775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111E25A7-5CA5-40BF-B2FE-9A9B2F002775}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

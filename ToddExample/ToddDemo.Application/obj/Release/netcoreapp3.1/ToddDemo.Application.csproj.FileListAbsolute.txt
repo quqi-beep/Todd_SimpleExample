@@ -1,0 +1,11 @@
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Release\netcoreapp3.1\ToddDemo.Application.deps.json
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Release\netcoreapp3.1\ToddDemo.Application.runtimeconfig.json
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Release\netcoreapp3.1\ToddDemo.Application.runtimeconfig.dev.json
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Release\netcoreapp3.1\ToddDemo.Application.dll
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Release\netcoreapp3.1\ToddDemo.Application.pdb
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Release\netcoreapp3.1\ToddDemo.Application.csprojAssemblyReference.cache
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Release\netcoreapp3.1\ToddDemo.Application.AssemblyInfoInputs.cache
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Release\netcoreapp3.1\ToddDemo.Application.AssemblyInfo.cs
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Release\netcoreapp3.1\ToddDemo.Application.dll
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Release\netcoreapp3.1\ToddDemo.Application.pdb
+D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Release\netcoreapp3.1\ToddDemo.Application.genruntimeconfig.cache
