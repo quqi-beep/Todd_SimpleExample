@@ -6,18 +6,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using ToddDemo.Application.Services;
 
 namespace ToddDemo.Extensions
 {
+    /// <summary>
+    /// Autofac扩展
+    /// </summary>
     public class AutofacModuleRegisterExtension : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)
         {
             //注册Service中的对象,Service中的类要以Service结尾，否则注册失败
-            builder.RegisterAssemblyTypes(GetAssemblyByName("ToddDemo.Protocol")).Where(a => a.Name.EndsWith("Service")).AsImplementedInterfaces();
+            builder.RegisterAssemblyTypes(typeof(TestLogService).Assembly).Where(a => a.Name.EndsWith("Service") || a.Name.EndsWith("Repository"))
+                .AsImplementedInterfaces();   ///GetAssemblyByName("ToddDemo.Protocol")
 
             //注册Repository中的对象,Repository中的类要以Repository结尾，否则注册失败
-            builder.RegisterAssemblyTypes(GetAssemblyByName("ToddDemo.Protocol")).Where(a => a.Name.EndsWith("Repository")).AsImplementedInterfaces();
+            //builder.RegisterAssemblyTypes(GetAssemblyByName("ToddDemo.Protocol")).Where(a => a.Name.EndsWith("Repository")).AsImplementedInterfaces();
         }
 
         /// <summary>

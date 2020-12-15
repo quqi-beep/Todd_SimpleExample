@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToddDemo", "ToddDemo\ToddDemo.csproj", "{8F6EE436-0969-487E-99C3-5A4A908DCC01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToddDemo.WebApi", "ToddDemo\ToddDemo.WebApi.csproj", "{8F6EE436-0969-487E-99C3-5A4A908DCC01}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToddDemo.Application", "ToddDemo.Application\ToddDemo.Application.csproj", "{39A3CD4D-150A-468B-8A2B-BC7912F51110}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToddDemo.Protocol", "ToddDemo.Protocol\ToddDemo.Protocol.csproj", "{111E25A7-5CA5-40BF-B2FE-9A9B2F002775}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToddDemo.Protocol", "ToddDemo.Protocol\ToddDemo.Protocol.csproj", "{111E25A7-5CA5-40BF-B2FE-9A9B2F002775}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

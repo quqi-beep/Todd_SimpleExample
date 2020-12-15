@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>ToddDemo</name>
+        <name>ToddDemo.WebApi</name>
     </assembly>
     <members>
         <member name="T:ToddDemo.Controllers.HomeController">
@@ -33,14 +33,14 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:ToddDemo.Controllers.HomeController.AddUserAsync(ToddDemo.Application.Requests.UserRequest)">
+        <member name="M:ToddDemo.Controllers.HomeController.AddUserAsync(ToddDemo.Protocol.Requests.UserRequest)">
             <summary>
             添加用户
             </summary>
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:ToddDemo.Controllers.HomeController.PatchUserAsync(Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{ToddDemo.Application.Requests.UserRequest})">
+        <member name="M:ToddDemo.Controllers.HomeController.PatchUserAsync(Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{ToddDemo.Protocol.Requests.UserRequest})">
             <summary>
             更新用户部分信息
             </summary>
@@ -50,6 +50,12 @@
         <member name="M:ToddDemo.Controllers.HomeController.TestIocAsync">
             <summary>
             测试依赖注入
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ToddDemo.Controllers.HomeController.TestLogAsync">
+            <summary>
+            测试日志记录
             </summary>
             <returns></returns>
         </member>
@@ -76,6 +82,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:ToddDemo.Extensions.AutofacModuleRegisterExtension">
+            <summary>
+            Autofac扩展
+            </summary>
+        </member>
         <member name="M:ToddDemo.Extensions.AutofacModuleRegisterExtension.GetAssemblyByName(System.String)">
             <summary>
             根据程序集名称获取程序集
@@ -83,12 +94,22 @@
             <param name="AssemblyName">程序集名称</param>
             <returns></returns>
         </member>
+        <member name="T:ToddDemo.Extensions.CustomExceptionMiddleware">
+            <summary>
+            自定义异常中间件
+            </summary>
+        </member>
         <member name="M:ToddDemo.Extensions.JwtExtension.AddToddJwt(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             JWT 扩展
             </summary>
             <param name="services"></param>
             <param name="configuration"></param>
+        </member>
+        <member name="T:ToddDemo.Extensions.SwaggerExtension">
+            <summary>
+            Swagger扩展
+            </summary>
         </member>
         <member name="P:ToddDemo.Infrastructure.AppSettings.ConnectionStrings">
             <summary>

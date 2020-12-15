@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using ToddDemo.Application.Responses;
+using ToddDemo.Protocol.Responses;
 
 namespace ToddDemo.Application.Infrastructure.AutoMapper
 {

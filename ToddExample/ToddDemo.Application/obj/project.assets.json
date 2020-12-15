@@ -1960,6 +1960,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "ToddDemo.Protocol/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/ToddDemo.Protocol.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToddDemo.Protocol.dll": {}
+        }
       }
     }
   },
@@ -6663,6 +6673,11 @@
         "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "ToddDemo.Protocol/1.0.0": {
+      "type": "project",
+      "path": "../ToddDemo.Protocol/ToddDemo.Protocol.csproj",
+      "msbuildProject": "../ToddDemo.Protocol/ToddDemo.Protocol.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6672,7 +6687,8 @@
       "Microsoft.AspNetCore.JsonPatch >= 3.1.8",
       "Microsoft.EntityFrameworkCore >= 3.1.8",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.8",
-      "MySql.Data.EntityFrameworkCore >= 8.0.21"
+      "MySql.Data.EntityFrameworkCore >= 8.0.21",
+      "ToddDemo.Protocol >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6704,7 +6720,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\ToddDemo.Protocol\\ToddDemo.Protocol.csproj": {
+              "projectPath": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\ToddDemo.Protocol\\ToddDemo.Protocol.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

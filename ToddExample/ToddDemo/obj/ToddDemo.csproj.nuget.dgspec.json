@@ -29,7 +29,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\ToddDemo.Protocol\\ToddDemo.Protocol.csproj": {
+                "projectPath": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\ToddDemo.Protocol\\ToddDemo.Protocol.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

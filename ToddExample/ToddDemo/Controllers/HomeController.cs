@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using ToddDemo.Application.Requests;
 using ToddDemo.Application.Services;
 using ToddDemo.Protocol.IService;
+using ToddDemo.Protocol.Requests;
 
 namespace ToddDemo.Controllers
 {
@@ -21,12 +21,15 @@ namespace ToddDemo.Controllers
     {
         private readonly UserService _userService;
         private readonly ITestService _testService;
+        private readonly ITestLogService _testLogService;
 
         public HomeController(UserService userService,
-            ITestService testService)
+            ITestService testService,
+            ITestLogService testLogService)
         {
             _userService = userService;
             _testService = testService;
+            _testLogService = testLogService;
         }
 
         /// <summary>
@@ -107,6 +110,16 @@ namespace ToddDemo.Controllers
         {
             var test =await _testService.EatAsync();
             return Ok(test);
+        }
+
+        /// <summary>
+        /// 测试日志记录
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("test/log"), AllowAnonymous]
+        public async Task TestLogAsync()
+        {
+            await _testLogService.WriteMsgeeageAsync();
         }
 
     }

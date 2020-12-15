@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ToddDemo.Application.Context;
 using ToddDemo.Application.EventHandlers.Event;
-using ToddDemo.Application.Requests;
-using ToddDemo.Application.Responses;
+using ToddDemo.Protocol.Requests;
+using ToddDemo.Protocol.Responses;
 
 namespace ToddDemo.Application.Services
 {

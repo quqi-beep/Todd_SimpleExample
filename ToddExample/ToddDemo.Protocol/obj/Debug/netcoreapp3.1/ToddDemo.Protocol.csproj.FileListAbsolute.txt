@@ -5,4 +5,3 @@ D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\De
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\netcoreapp3.1\ToddDemo.Protocol.AssemblyInfo.cs
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\netcoreapp3.1\ToddDemo.Protocol.dll
 D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\netcoreapp3.1\ToddDemo.Protocol.pdb
-D:\TechnologyDemo\github\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\netcoreapp3.1\ToddDemo.Protocol.csprojAssemblyReference.cache

@@ -81,18 +81,17 @@ namespace ToddDemo
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            //autofac 新增 可选
+            app.UseCustomExceptionMiddleware();
+            //Autofac 新增 可选
             this.AutofacContainer = app.ApplicationServices.GetAutofacRoot();
-
             app.UseSwagger();
 
             app.UseSwaggerUI(x =>
             {
                 x.SwaggerEndpoint("/swagger/v1/swagger.json", "Test Version V1");
                 x.SwaggerEndpoint("/swagger/v2/swagger.json", "Test Version V2");
-            });
-
+            });           
+                    
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
@@ -104,7 +103,7 @@ namespace ToddDemo
         }
 
 
-        //autofac 新增
+        //Autofac注入 新增
         public void ConfigureContainer(ContainerBuilder builder)
         {
             // 直接用Autofac注册我们自定义的 

@@ -2692,7 +2692,8 @@
           "MediatR.Extensions.Microsoft.DependencyInjection": "8.0.0",
           "Microsoft.AspNetCore.JsonPatch": "3.1.8",
           "Microsoft.EntityFrameworkCore": "3.1.8",
-          "MySql.Data.EntityFrameworkCore": "8.0.21"
+          "MySql.Data.EntityFrameworkCore": "8.0.21",
+          "ToddDemo.Protocol": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ToddDemo.Application.dll": {}
@@ -8576,9 +8577,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\ToddDemo\\ToddDemo.csproj",
-      "projectName": "ToddDemo",
-      "projectPath": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\ToddDemo\\ToddDemo.csproj",
+      "projectUniqueName": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\ToddDemo\\ToddDemo.WebApi.csproj",
+      "projectName": "ToddDemo.WebApi",
+      "projectPath": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\ToddDemo\\ToddDemo.WebApi.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
       "outputPath": "D:\\TechnologyDemo\\github\\Todd_SimpleExample\\ToddExample\\ToddDemo\\obj\\",
       "projectStyle": "PackageReference",

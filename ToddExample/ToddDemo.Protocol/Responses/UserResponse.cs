@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToddDemo.Application.Responses
+namespace ToddDemo.Protocol.Responses
 {
     public class UserResponse
     {

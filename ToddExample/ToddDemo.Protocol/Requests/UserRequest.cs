@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ToddDemo.Application.Requests
+namespace ToddDemo.Protocol.Requests
 {
     public class UserRequest
     {

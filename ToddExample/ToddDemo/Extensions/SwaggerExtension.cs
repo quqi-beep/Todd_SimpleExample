@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ToddDemo.Extensions
 {
+    /// <summary>
+    /// Swagger扩展
+    /// </summary>
     public static class SwaggerExtension
     {
         public static void AddToddSwagger(this IServiceCollection services)
