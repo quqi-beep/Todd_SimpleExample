@@ -6,3 +6,4 @@
    * 4.添加AutoMapper自动映射，多个Profile
    * 5.添加MediatR组件,支持单播和多播传递
    * 6.添加Ioc框架 Autofac组件
+   * 7.添加自定义异常中间件, 日志记录
