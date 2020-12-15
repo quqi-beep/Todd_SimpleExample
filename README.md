@@ -5,3 +5,4 @@
    * 3.集成EF CORE 连接Mysql<br>
    * 4.添加AutoMapper自动映射，多个Profile
    * 5.添加MediatR组件,支持单播和多播传递
+   * 6.添加Ioc框架 Autofac组件
