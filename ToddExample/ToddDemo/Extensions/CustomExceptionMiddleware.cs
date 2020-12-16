@@ -51,7 +51,7 @@ namespace ToddDemo.Extensions
             else
             {
                 knownException = KnownException.FromKnownException(knownException);
-                httpContext.Response.StatusCode = StatusCodes.Status200OK;
+                httpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
             }
 
             // 3.把响应信息通过json 的方式输出出去

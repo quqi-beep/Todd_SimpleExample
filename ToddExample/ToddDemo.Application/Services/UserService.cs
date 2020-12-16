@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ToddDemo.Application.Context;
 using ToddDemo.Application.EventHandlers.Event;
+using ToddDemo.Application.Repositorys;
 using ToddDemo.Protocol.Requests;
 using ToddDemo.Protocol.Responses;
 
@@ -16,16 +17,22 @@ namespace ToddDemo.Application.Services
     public class UserService
     {
         private readonly SpmContext _context;
+        private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
+        private readonly IUnitOfWork _unitOfWork;
 
         public UserService(SpmContext context,
+            IUserRepository userRepository,
             IMediator mediator,
+            IUnitOfWork unitOfWork,
             IMapper mapper)
         {
             _context = context;
+            _userRepository = userRepository;
             _mapper = mapper;
             _mediator = mediator;
+            _unitOfWork = unitOfWork;
         }
 
         /// <summary>
@@ -53,8 +60,8 @@ namespace ToddDemo.Application.Services
         /// <returns></returns>
         public UsersResponse GetUsersAsync()
         {
-            var text = _context.Set<User>().AsQueryable().ToList();
-            var users = _mapper.Map<List<UserDto>>(text);
+            var list = _userRepository.GetAllUserAsync().Result;
+            var users = _mapper.Map<List<UserDto>>(list);
 
             //多Profile映射
             var age = _mapper.Map<List<UserAgeDto>>(users);
@@ -77,7 +84,8 @@ namespace ToddDemo.Application.Services
                 Age = request.Age
             };
             await _context.AddAsync(user);
-            await _context.SaveChangesAsync();
+            //await _context.SaveChangesAsync();
+            await _unitOfWork.SaveChangesAsync();
         }
 
         /// <summary>
