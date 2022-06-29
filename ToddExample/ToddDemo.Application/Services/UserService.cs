@@ -9,20 +9,21 @@ using System.Threading.Tasks;
 using ToddDemo.Application.Context;
 using ToddDemo.Application.EventHandlers.Event;
 using ToddDemo.Application.Repositorys;
+using ToddDemo.Protocol.IService;
 using ToddDemo.Protocol.Requests;
 using ToddDemo.Protocol.Responses;
 
 namespace ToddDemo.Application.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
-        private readonly SpmContext _context;
+        private readonly ToddExampleContext _context;
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
         private readonly IUnitOfWork _unitOfWork;
 
-        public UserService(SpmContext context,
+        public UserService(ToddExampleContext context,
             IUserRepository userRepository,
             IMediator mediator,
             IUnitOfWork unitOfWork,
@@ -39,7 +40,7 @@ namespace ToddDemo.Application.Services
         /// 获取用户
         /// </summary>
         /// <returns></returns>
-        public UserResponse GetUserAsync()
+        public async Task<UserResponse> GetUserFirstOrDefaultAsync()
         {
             var res = new UserResponse();
 
@@ -51,6 +52,7 @@ namespace ToddDemo.Application.Services
                 res.UserName = first.UserName;
                 res.Password = first.Password;
             }
+            await Task.Run(() => { });
             return res;
         }
 
@@ -58,7 +60,7 @@ namespace ToddDemo.Application.Services
         /// 获取用户集合
         /// </summary>
         /// <returns></returns>
-        public UsersResponse GetUsersAsync()
+        public async Task<UsersResponse> GetUsersAsync()
         {
             var list = _userRepository.GetAllUserAsync().Result;
             var users = _mapper.Map<List<UserDto>>(list);
@@ -92,7 +94,7 @@ namespace ToddDemo.Application.Services
         /// 补丁更新
         /// </summary>
         /// <param name="request"></param>
-        public void PatchUserAsync(JsonPatchDocument<UserRequest> request)
+        public async Task PatchUserAsync(JsonPatchDocument<UserRequest> request)
         {
             var user = _context.Set<User>().FirstOrDefault();
             var userDbReuqust = new UserRequest
@@ -112,7 +114,7 @@ namespace ToddDemo.Application.Services
 
             _context.Set<User>().Update(user);
             _context.SaveChanges();
-        }        
+        }
 
     }
 }

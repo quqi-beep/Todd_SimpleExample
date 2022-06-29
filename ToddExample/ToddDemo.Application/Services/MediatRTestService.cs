@@ -5,14 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using ToddDemo.Application.Context;
 using ToddDemo.Application.EventHandlers.Event;
+using ToddDemo.Protocol.IService;
 
 namespace ToddDemo.Application.Services
 {
-    public class MediatRTestService
+    public class MediatRTestService : IMediatRTestService
     {
-        private readonly SpmContext _context;
+        private readonly ToddExampleContext _context;
         private readonly IMediator _mediator;
-        public MediatRTestService(SpmContext context,
+        public MediatRTestService(ToddExampleContext context,
             IMediator mediator)
         {
             _context = context;

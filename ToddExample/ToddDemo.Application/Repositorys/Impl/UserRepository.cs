@@ -8,7 +8,7 @@ namespace ToddDemo.Application.Repositorys.Impl
 {
     public class UserRepository : BaseRepository<User>, IUserRepository
     {
-        public UserRepository(SpmContext spmContext) : base(spmContext)
+        public UserRepository(ToddExampleContext spmContext) : base(spmContext)
         {
         }
 

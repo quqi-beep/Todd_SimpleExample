@@ -8,9 +8,9 @@ namespace ToddDemo.Application.Repositorys.Impl
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly SpmContext _spmContext;
+        private readonly ToddExampleContext _spmContext;
 
-        public UnitOfWork(SpmContext spmContext)
+        public UnitOfWork(ToddExampleContext spmContext)
         {
             _spmContext = spmContext;
         }

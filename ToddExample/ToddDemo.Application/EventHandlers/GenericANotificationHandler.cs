@@ -14,9 +14,9 @@ namespace ToddDemo.Application.EventHandlers
     /// </summary>
     public class GenericANotificationHandler : INotificationHandler<GenericNotification>
     {
-        private readonly SpmContext _context;
+        private readonly ToddExampleContext _context;
 
-        public GenericANotificationHandler(SpmContext context)
+        public GenericANotificationHandler(ToddExampleContext context)
         {
             _context = context;
         }
@@ -39,9 +39,9 @@ namespace ToddDemo.Application.EventHandlers
     /// </summary>
     public class GenericBNotificationHandler : INotificationHandler<GenericNotification>
     {
-        private readonly SpmContext _context;
+        private readonly ToddExampleContext _context;
 
-        public GenericBNotificationHandler(SpmContext context)
+        public GenericBNotificationHandler(ToddExampleContext context)
         {
             _context = context;
         }

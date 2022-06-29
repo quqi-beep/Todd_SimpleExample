@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using ToddDemo.Application.Services;
 using ToddDemo.Protocol.IService;
 using ToddDemo.Protocol.Requests;
 
@@ -15,21 +14,15 @@ namespace ToddDemo.Controllers
     /// <summary>
     /// 测试控制器
     /// </summary>
-    [Route("[controller]")]
-    [ApiController]
+    [Route("home")]
     public class HomeController : AuthController
     {
-        private readonly UserService _userService;
-        private readonly ITestService _testService;
-        private readonly ITestLogService _testLogService;
+        private readonly IUserService _userService;
 
-        public HomeController(UserService userService,
-            ITestService testService,
-            ITestLogService testLogService)
+        public HomeController(IUserService userService)
         {
             _userService = userService;
-            _testService = testService;
-            _testLogService = testLogService;
+
         }
 
         /// <summary>
@@ -63,7 +56,7 @@ namespace ToddDemo.Controllers
         [HttpGet("index3"), AllowAnonymous]
         public IActionResult Index3()
         {
-            var user = _userService.GetUserAsync();
+            var user = _userService.GetUserFirstOrDefaultAsync();
             return Ok(user);
         }
 
@@ -85,7 +78,7 @@ namespace ToddDemo.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost("user/add"), AllowAnonymous]
-        public async Task AddUserAsync([FromBody]UserRequest request)
+        public async Task AddUserAsync([FromBody] UserRequest request)
         {
             await _userService.AddUserAsync(request);
         }
@@ -96,31 +89,12 @@ namespace ToddDemo.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost("user/patch"), AllowAnonymous]
-        public void PatchUserAsync([FromBody]JsonPatchDocument<UserRequest> request)
+        public void PatchUserAsync([FromBody] JsonPatchDocument<UserRequest> request)
         {
             _userService.PatchUserAsync(request);
         }
 
-        /// <summary>
-        /// 测试依赖注入
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("test/ioc"), AllowAnonymous]
-        public async Task<IActionResult> TestIocAsync()
-        {
-            var test =await _testService.EatAsync();
-            return Ok(test);
-        }
 
-        /// <summary>
-        /// 测试日志记录
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("test/log"), AllowAnonymous]
-        public async Task TestLogAsync()
-        {
-            await _testLogService.WriteMsgeeageAsync();
-        }
 
     }
 }

@@ -1,0 +1,9 @@
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\bin\Debug\netcoreapp3.1\ToddDemo.Protocol.deps.json
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\bin\Debug\netcoreapp3.1\ToddDemo.Protocol.dll
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\bin\Debug\netcoreapp3.1\ToddDemo.Protocol.pdb
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\netcoreapp3.1\ToddDemo.Protocol.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\netcoreapp3.1\ToddDemo.Protocol.AssemblyInfoInputs.cache
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\netcoreapp3.1\ToddDemo.Protocol.AssemblyInfo.cs
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\netcoreapp3.1\ToddDemo.Protocol.csproj.CoreCompileInputs.cache
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\netcoreapp3.1\ToddDemo.Protocol.dll
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\netcoreapp3.1\ToddDemo.Protocol.pdb

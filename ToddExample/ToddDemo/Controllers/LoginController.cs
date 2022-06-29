@@ -11,12 +11,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ToddDemo.Controllers
 {
-    [Route("[controller]")]
-    [ApiController]
-    public class LoginController : ControllerBase
+    [Route("login")]
+    public class LoginController : AuthController
     {
         private readonly User _user;
         private readonly JwtSetting _jwtSetting;
@@ -32,7 +32,7 @@ namespace ToddDemo.Controllers
             _jwtSetting = options.Value;
         }
 
-        [HttpGet("login")]
+        [HttpPost, AllowAnonymous]
         public IActionResult Login(string name, string password)
         {
             if (_user.Name == name && _user.Password == password)

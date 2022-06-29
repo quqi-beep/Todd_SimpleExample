@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ToddDemo.Controllers
 {
-    [Route("[controller]")]
     [Authorize]
     [ApiController]
     public class AuthController : ControllerBase

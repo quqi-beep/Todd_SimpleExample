@@ -17,14 +17,12 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using ToddDemo.Application.Context;
 using Microsoft.EntityFrameworkCore;
-using ToddDemo.Application.Services;
 using AutoMapper;
-using ToddDemo.Application.Infrastructure.AutoMapper;
 using MediatR;
-using ToddDemo.Application.EventHandlers.Event;
-using ToddDemo.Application.EventHandlers;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using ToddDemo.Application.Infrastructure.AutoMapper;
+using ToddDemo.Application.EventHandlers.Event;
 
 namespace ToddDemo
 {
@@ -62,15 +60,14 @@ namespace ToddDemo
             //注入Swagger
             services.AddToddSwagger();
 
-            services.AddScoped<UserService>();
-            services.AddScoped<MediatRTestService>();
+            //services.AddScoped<UserService>();
+            //services.AddScoped<MediatRTestService>();
 
             //注入MySql连接字符串
             var connectionStrings = Configuration.GetSection("ConnectionStrings").Value;
-            services.AddDbContext<SpmContext>(options => options.UseMySQL(connectionStrings, b => b.MigrationsAssembly("ToddDemo.Application")));
+            services.AddDbContext<ToddExampleContext>(options => options.UseMySQL(connectionStrings, b => b.MigrationsAssembly("ToddDemo.Application")));
 
-            var s = typeof(GenericRequest);
-            services.AddMediatR(s);
+            services.AddMediatR(typeof(GenericRequest));
 
         }
 

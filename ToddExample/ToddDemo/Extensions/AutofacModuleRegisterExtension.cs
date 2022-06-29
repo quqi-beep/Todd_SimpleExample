@@ -21,7 +21,7 @@ namespace ToddDemo.Extensions
         {
             //注册Service中的对象,Service中的类要以Service结尾，否则注册失败
             builder.RegisterAssemblyTypes(typeof(TestLogService).Assembly).Where(a => a.Name.EndsWith("Service") || a.Name.EndsWith("Repository"))
-                .AsImplementedInterfaces();   ///GetAssemblyByName("ToddDemo.Protocol")
+                .AsImplementedInterfaces();   
 
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
         }

@@ -11,9 +11,9 @@ namespace ToddDemo.Application.EventHandlers
 {
     public class GenericRequestHandler : IRequestHandler<GenericRequest, string>
     {
-        private readonly SpmContext _context;
+        private readonly ToddExampleContext _context;
 
-        public GenericRequestHandler(SpmContext context)
+        public GenericRequestHandler(ToddExampleContext context)
         {
             _context = context;
         }
@@ -37,9 +37,9 @@ namespace ToddDemo.Application.EventHandlers
 
     public class GenericVoidRequestHandler : AsyncRequestHandler<GenericVoidRequest>
     {
-        private readonly SpmContext _context;
+        private readonly ToddExampleContext _context;
 
-        public GenericVoidRequestHandler(SpmContext context)
+        public GenericVoidRequestHandler(ToddExampleContext context)
         {
             _context = context;
         }

@@ -11,8 +11,8 @@ namespace ToddDemo.Application.Repositorys.Impl
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        private readonly SpmContext _spmContext;
-        public BaseRepository(SpmContext spmContext)
+        private readonly ToddExampleContext _spmContext;
+        public BaseRepository(ToddExampleContext spmContext)
         {
             _spmContext = spmContext;
         }

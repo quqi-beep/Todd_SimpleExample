@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ToddDemo.Application.Services;
+using ToddDemo.Protocol.IService;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,9 +16,9 @@ namespace ToddDemo.Controllers
     [Route("[controller]")]
     public class MediatRTestController : AuthController
     {
-        private readonly MediatRTestService _mediatRTestService;
+        private readonly IMediatRTestService _mediatRTestService;
 
-        public MediatRTestController(MediatRTestService mediatRTestService)
+        public MediatRTestController(IMediatRTestService mediatRTestService)
         {
             _mediatRTestService = mediatRTestService;
         }
