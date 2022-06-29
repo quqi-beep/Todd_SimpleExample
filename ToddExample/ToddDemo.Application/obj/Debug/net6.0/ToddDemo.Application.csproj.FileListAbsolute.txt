@@ -1,0 +1,17 @@
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Debug\net6.0\ToddDemo.Application.deps.json
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Debug\net6.0\ToddDemo.Application.runtimeconfig.json
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Debug\net6.0\ToddDemo.Application.dll
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Debug\net6.0\ref\ToddDemo.Application.dll
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Debug\net6.0\ToddDemo.Application.pdb
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Debug\net6.0\ToddDemo.Protocol.dll
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\bin\Debug\net6.0\ToddDemo.Protocol.pdb
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\net6.0\ToddDemo.Application.csproj.AssemblyReference.cache
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\net6.0\ToddDemo.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\net6.0\ToddDemo.Application.AssemblyInfoInputs.cache
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\net6.0\ToddDemo.Application.AssemblyInfo.cs
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\net6.0\ToddDemo.Application.csproj.CoreCompileInputs.cache
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\net6.0\ToddDemo.Application.csproj.CopyComplete
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\net6.0\ToddDemo.Application.dll
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\net6.0\ref\ToddDemo.Application.dll
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\net6.0\ToddDemo.Application.pdb
+D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Application\obj\Debug\net6.0\ToddDemo.Application.genruntimeconfig.cache

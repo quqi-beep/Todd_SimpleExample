@@ -62,7 +62,7 @@ namespace ToddDemo.Application.Services
         /// <returns></returns>
         public async Task<UsersResponse> GetUsersAsync()
         {
-            var list = _userRepository.GetAllUserAsync().Result;
+            var list = await _userRepository.GetAllUserAsync();
             var users = _mapper.Map<List<UserDto>>(list);
 
             //多Profile映射
@@ -114,6 +114,7 @@ namespace ToddDemo.Application.Services
 
             _context.Set<User>().Update(user);
             _context.SaveChanges();
+            await Task.Run(() => { });
         }
 
     }

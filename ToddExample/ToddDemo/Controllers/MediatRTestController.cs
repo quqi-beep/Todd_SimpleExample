@@ -13,7 +13,7 @@ namespace ToddDemo.Controllers
     /// <summary>
     /// 测试MediatR的使用
     /// </summary>
-    [Route("[controller]")]
+    [Route("mediatr")]
     public class MediatRTestController : AuthController
     {
         private readonly IMediatRTestService _mediatRTestService;
@@ -27,7 +27,7 @@ namespace ToddDemo.Controllers
         /// 单播有返回值
         /// </summary>
         /// <returns></returns>
-        [HttpPost("mediatr/adduser"), AllowAnonymous]
+        [HttpPost("adduser"), AllowAnonymous]
         public async Task<IActionResult> MediatRAddUserAsync()
         {
             var res = await _mediatRTestService.MediatRAddUserAsync();
@@ -38,7 +38,7 @@ namespace ToddDemo.Controllers
         /// 单播无返回值
         /// </summary>
         /// <returns></returns>
-        [HttpPost("mediatr/void/adduser"), AllowAnonymous]
+        [HttpPost("void/adduser"), AllowAnonymous]
         public async Task MediatRVoidAddUserAsync()
         {
             await _mediatRTestService.MediatRVoidAddUserAsync();
@@ -48,7 +48,7 @@ namespace ToddDemo.Controllers
         /// 多播传递
         /// </summary>
         /// <returns></returns>
-        [HttpPost("mediatr/notfication/adduser"), AllowAnonymous]
+        [HttpPost("notfication/adduser"), AllowAnonymous]
         public async Task MediatRNotifcationAddUserAsync()
         {
             await _mediatRTestService.MediatRNotifcationAddUserAsync();
