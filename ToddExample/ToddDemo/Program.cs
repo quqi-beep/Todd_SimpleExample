@@ -19,26 +19,6 @@ using ToddDemo.Application.Infrastructure.AutoMapper;
 using ToddDemo.Extensions;
 using ToddDemo.Infrastructure;
 
-//namespace ToddDemo
-//{
-//    public class Program
-//    {
-//        public static void Main(string[] args)
-//        {
-//            CreateHostBuilder(args).Build().Run();
-//        }
-
-//        public static IHostBuilder CreateHostBuilder(string[] args) =>
-//            Host.CreateDefaultBuilder(args)
-//            //改用Autofac来实现依赖注入
-//            .UseServiceProviderFactory(new AutofacServiceProviderFactory())
-//                .ConfigureWebHostDefaults(webBuilder =>
-//                {
-//                    webBuilder.UseStartup<Startup>();
-//                });
-//    }
-//}
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(builder =>

@@ -9,4 +9,3 @@ D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\net6.
 D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\net6.0\ToddDemo.Protocol.dll
 D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\net6.0\ref\ToddDemo.Protocol.dll
 D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\net6.0\ToddDemo.Protocol.pdb
-D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo.Protocol\obj\Debug\net6.0\ToddDemo.Protocol.csproj.AssemblyReference.cache

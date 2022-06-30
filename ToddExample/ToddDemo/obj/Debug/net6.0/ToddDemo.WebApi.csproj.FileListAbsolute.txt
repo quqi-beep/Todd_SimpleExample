@@ -47,9 +47,7 @@ D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\net6.0\Microso
 D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
 D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Project_Test\Todd_SimpleExample\ToddExample\ToddDemo\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
