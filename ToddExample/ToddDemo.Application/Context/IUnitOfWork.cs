@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToddDemo.Application.Repositorys
+namespace ToddDemo.Application.Context
 {
     public interface IUnitOfWork
     {

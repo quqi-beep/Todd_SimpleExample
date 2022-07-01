@@ -6,8 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using ToddDemo.Application.Repositorys;
-using ToddDemo.Application.Repositorys.Impl;
+using ToddDemo.Application.Context;
 using ToddDemo.Application.Services;
 
 namespace ToddDemo.Extensions
@@ -21,8 +20,9 @@ namespace ToddDemo.Extensions
         {
             //注册Service中的对象,Service中的类要以Service结尾，否则注册失败
             builder.RegisterAssemblyTypes(typeof(TestLogService).Assembly).Where(a => a.Name.EndsWith("Service") || a.Name.EndsWith("Repository"))
-                .AsImplementedInterfaces();   
+                .AsImplementedInterfaces();
 
+            builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
         }
 

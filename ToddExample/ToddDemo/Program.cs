@@ -21,10 +21,6 @@ using ToddDemo.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
-{
-    builder.RegisterModule(new AutofacModuleRegisterExtension());
-});
 builder.Services.Configure<JwtSetting>(builder.Configuration.GetSection("JwtSetting"));
 //×¢ÈëJWT
 builder.Services.AddToddJwt(builder.Configuration);
@@ -42,7 +38,10 @@ builder.Services.AddToddSwagger();
 var connectionStrings = builder.Configuration.GetSection("ConnectionStrings").Value;
 builder.Services.AddDbContext<ToddExampleContext>(options => options.UseMySQL(connectionStrings, b => b.MigrationsAssembly("ToddDemo.Application")));
 builder.Services.AddMediatR(typeof(GenericRequest));
-
+builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
+{
+    builder.RegisterModule(new AutofacModuleRegisterExtension());
+});
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {

@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using ToddDemo.Application.Context;
 using ToddDemo.Application.EventHandlers.Event;
-using ToddDemo.Application.Repositorys;
 using ToddDemo.Protocol.IService;
 using ToddDemo.Protocol.Requests;
 using ToddDemo.Protocol.Responses;
@@ -17,19 +16,17 @@ namespace ToddDemo.Application.Services
 {
     public class UserService : IUserService
     {
-        private readonly ToddExampleContext _context;
-        private readonly IUserRepository _userRepository;
+        private readonly IRepository<User> _userRepository;
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
         private readonly IUnitOfWork _unitOfWork;
 
-        public UserService(ToddExampleContext context,
-            IUserRepository userRepository,
+        public UserService(
+            IRepository<User> userRepository,
             IMediator mediator,
             IUnitOfWork unitOfWork,
             IMapper mapper)
         {
-            _context = context;
             _userRepository = userRepository;
             _mapper = mapper;
             _mediator = mediator;
@@ -43,14 +40,12 @@ namespace ToddDemo.Application.Services
         public async Task<UserResponse> GetUserFirstOrDefaultAsync()
         {
             var res = new UserResponse();
-
-            var text = _context.Set<User>();
-            var first = text.FirstOrDefault();
-            if (first != null)
+            var user = await _userRepository.FirstOrDefaultAsync(x => x.UserId == 1);
+            if (user != null)
             {
-                res.UserId = first.UserId;
-                res.UserName = first.UserName;
-                res.Password = first.Password;
+                res.UserId = user.UserId;
+                res.UserName = user.UserName;
+                res.Password = user.Password;
             }
             await Task.Run(() => { });
             return res;
@@ -62,7 +57,7 @@ namespace ToddDemo.Application.Services
         /// <returns></returns>
         public async Task<UsersResponse> GetUsersAsync()
         {
-            var list = await _userRepository.GetAllUserAsync();
+            var list = await _userRepository.GetAllListAsync();
             var users = _mapper.Map<List<UserDto>>(list);
 
             //多Profile映射
@@ -85,8 +80,7 @@ namespace ToddDemo.Application.Services
                 Password = request.Password,
                 Age = request.Age
             };
-            await _context.AddAsync(user);
-            //await _context.SaveChangesAsync();
+            await _userRepository.InsertAsync(user);
             await _unitOfWork.SaveChangesAsync();
         }
 
@@ -96,7 +90,7 @@ namespace ToddDemo.Application.Services
         /// <param name="request"></param>
         public async Task PatchUserAsync(JsonPatchDocument<UserRequest> request)
         {
-            var user = _context.Set<User>().FirstOrDefault();
+            var user =await _userRepository.FirstOrDefaultAsync(x => x.UserId == 1);
             var userDbReuqust = new UserRequest
             {
                 UserId = user.UserId,
@@ -110,10 +104,8 @@ namespace ToddDemo.Application.Services
             user.UserName = userDbReuqust.UserName;
             user.Password = userDbReuqust.Password;
             user.Age = userDbReuqust.Age;
+            await _userRepository.UpdateAsync(user);
 
-
-            _context.Set<User>().Update(user);
-            _context.SaveChanges();
             await Task.Run(() => { });
         }
 
