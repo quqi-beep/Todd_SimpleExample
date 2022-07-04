@@ -39,13 +39,13 @@ namespace ToddDemo.Controllers
         }
 
         /// <summary>
-        /// 测试连接mysql
+        /// 获取单个用户
         /// </summary>
         /// <returns></returns>
         [HttpGet, AllowAnonymous]
-        public IActionResult Index3()
+        public async Task<IActionResult> GetUserAsync()
         {
-            var user = _userService.GetUserFirstOrDefaultAsync();
+            var user = await _userService.GetUserFirstOrDefaultAsync();
             return Ok(user);
         }
 
@@ -54,10 +54,10 @@ namespace ToddDemo.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("users"), AllowAnonymous]
-        public IActionResult GetUsersAsync()
+        public async Task<IActionResult> GetUsersAsync()
         {
 
-            var users = _userService.GetUsersAsync();
+            var users = await _userService.GetUsersAsync();
             return Ok(users);
         }
 
@@ -78,9 +78,9 @@ namespace ToddDemo.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost("patch"), AllowAnonymous]
-        public void PatchUserAsync([FromBody] JsonPatchDocument<UserRequest> request)
+        public async Task PatchUserAsync([FromBody] JsonPatchDocument<UserRequest> request)
         {
-            _userService.PatchUserAsync(request);
+            await _userService.PatchUserAsync(request);
         }
     }
 }
