@@ -37,7 +37,6 @@ namespace ToddDemo.WebApi.Controllers
         [HttpGet("test/log"), AllowAnonymous]
         public async Task TestLogAsync()
         {
-            Console.WriteLine("测试提交");
             await _testLogService.WriteMsgeeageAsync();
         }
     }
