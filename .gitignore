@@ -1,1 +1,12 @@
 .vs
+/ToddExample/ToddDemo/bin/Debug/net6.0
+/ToddExample/ToddDemo/obj
+/ToddExample/ToddDemo.Application/bin/Debug/net6.0
+/ToddExample/ToddDemo.Test/bin/Debug/net6.0
+/ToddExample/ToddDemo.Test/obj/Debug/net6.0
+/ToddExample/ToddDemo.Protocol/bin/Debug/net6.0
+/ToddExample/ToddDemo.Protocol/obj/Debug/net6.0
+/ToddExample/ToddDemo.Application/obj/Debug/net6.0
+/ToddExample/ToddDemo.Application/obj
+/ToddExample/ToddDemo.Protocol/obj
+/ToddExample/ToddDemo.Test/obj
