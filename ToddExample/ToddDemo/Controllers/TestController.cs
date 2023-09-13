@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 using ToddDemo.Controllers;
 using ToddDemo.Protocol.IService;
@@ -36,6 +37,7 @@ namespace ToddDemo.WebApi.Controllers
         [HttpGet("test/log"), AllowAnonymous]
         public async Task TestLogAsync()
         {
+            Console.WriteLine("测试提交");
             await _testLogService.WriteMsgeeageAsync();
         }
     }
